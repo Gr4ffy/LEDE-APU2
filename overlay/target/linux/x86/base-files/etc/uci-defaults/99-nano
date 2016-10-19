@@ -1,0 +1,8 @@
+#!/bin/sh
+
+grep -q sysinfo.sh /etc/profile && exit 0
+if grep -q "{HOME:-/root}" /etc/profile; then
+        sed -i 's!HOME=${HOME:-/root}!HOME=${HOME:-/root}\nexport EDITOR="/usr/bin/nano"!' /etc/profile
+fi
+
+exit 0
