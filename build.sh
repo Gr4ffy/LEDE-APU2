@@ -23,7 +23,7 @@ if [ ! -d "$clonedir" ]; then
   Msg "Cloning Repo..."
   git clone https://github.com/lede-project/source $clonedir
   cd $clonedir
-  git reset --hard b7b223be41cde2a264c0a9c4bbd1e0a4473682a7
+  git reset --hard 5640986001ecaa673f7f97a40d0418f7e926da93
   cd - > /dev/null
 fi
 
@@ -32,6 +32,7 @@ if [ "$firstbuild" -eq "0" ]; then
   Msg "Cleaning Builddir..."
   cd $clonedir
   rm -rf ./bin
+  make clean
   cd - > /dev/null
 fi
 
